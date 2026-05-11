@@ -1,0 +1,17 @@
+token: PCvWkkGtKy2DsX9b
+
+song links:
+    - https://piapro.jp/t/ULcJ
+    - https://songle.jp/songs/piapro.jp%2Ft%2FULcJ%2F20250205120202
+    - https://www.nicovideo.jp/watch/sm44976490
+    - https://www.youtube.com/watch?v=NPOhKU5VTrQ
+
+Resources:
+    - https://fonts.google.com/specimen/Kaisei+HarunoUmi?script=Jpan&preview.script=Jpan
+    - https://www.cgtrader.com/items/6484540/download-page
+
+Colours:
+    - #F8FFE5
+    - #66999B
+    - #496A81
+    - #2B3A67

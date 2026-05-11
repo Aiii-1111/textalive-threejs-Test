@@ -1,0 +1,23 @@
+:root
+{
+  background-color: #2B3A67;
+  font-family: "Kaisei HarunoUmi", serif;
+}
+
+button
+{
+  background-color:#66999B;
+  color:#F8FFE5
+}
+
+button:hover
+{
+  background-color:#F8FFE5;
+  color:#66999B
+}
+
+.kaisei-harunoumi-regular {
+  font-family: "Kaisei HarunoUmi", serif;
+  font-weight: 400;
+  font-style: normal;
+}

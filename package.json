@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "textalive-app-api": "^0.4.0",
+    "three": "^0.184.0"
+  }
+}
