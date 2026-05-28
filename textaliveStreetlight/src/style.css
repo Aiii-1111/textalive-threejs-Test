@@ -2,22 +2,48 @@
 {
   background-color: #2B3A67;
   font-family: "Kaisei HarunoUmi", serif;
+  color:#F8FFE5
 }
 
 button
 {
+  vertical-align: middle;
   background-color:#66999B;
-  color:#F8FFE5
+  color:#F8FFE5;
+  font-family: "Kaisei HarunoUmi", serif;
 }
 
 button:hover
 {
   background-color:#F8FFE5;
-  color:#66999B
+  color:#66999B;
+  font-family: "Kaisei HarunoUmi", serif;
+}
+
+#toolbar
+{
+  height: 40px;
+  background-color:#496A81;
+  font-family: "Kaisei HarunoUmi", serif;
+}
+
+#media
+{
+  position:absolute;
+  top: 5%;
+  right:0%
 }
 
 .kaisei-harunoumi-regular {
   font-family: "Kaisei HarunoUmi", serif;
   font-weight: 400;
   font-style: normal;
+}
+
+#test
+{
+  height: 25px;
+  color: #F8FFE5;
+  font-size: 100%;
+  z-index: 10;
 }

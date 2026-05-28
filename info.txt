@@ -1,12 +1,13 @@
 token: PCvWkkGtKy2DsX9b
 
-song links:
-    - https://piapro.jp/t/ULcJ
+song links: ストリートライト
+    - https://piapro.jp/t/ULcJ/20250205120202
     - https://songle.jp/songs/piapro.jp%2Ft%2FULcJ%2F20250205120202
     - https://www.nicovideo.jp/watch/sm44976490
     - https://www.youtube.com/watch?v=NPOhKU5VTrQ
 
 Resources:
+    - https://misora.main.jp/blog/archives/1299#toc11
     - https://fonts.google.com/specimen/Kaisei+HarunoUmi?script=Jpan&preview.script=Jpan
     - https://www.cgtrader.com/items/6484540/download-page
 
@@ -15,3 +16,11 @@ Colours:
     - #66999B
     - #496A81
     - #2B3A67
+    
+    - plane 1500x1970
+
+Three.js
+    - set up scene, camera & renderer
+    - create a method to connect to the renderer as the animation loop (eg render loop)
+    - objects added need to set up: geometry, material & mesh
+    - 

@@ -1,17 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html>
   <head>
+    <meta charset="utf-8">
+    <link href="/src/style.css" type="text/css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi&display=swap" rel="stylesheet">
-    <title>textalivestreetlight</title>
+    <title>ストリートライト/Streetlight</title>
   </head>
   <body>
     <div id="media"></div>
     <div id="toolbar">
-      <button>Play</button>
-      <button>Pause</button>
+      <button id="play">Play</button>
+      <button id="pause">Pause</button>
+      <button id="replay">Replay</button>
       <div></div>
+    </div>
+    <div id="lyricApp">
+      <span id="phrase"></span>
+      <canvas id="three"></canvas>
     </div>
     <script type="module" src="/src/main.js"></script>
   </body>
