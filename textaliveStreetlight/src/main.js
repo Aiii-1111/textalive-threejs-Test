@@ -1,7 +1,6 @@
-import { Player } from "textalive-app-api";
+import { Player, Ease } from "textalive-app-api";
 import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/Addons.js";
-import { GLTFLoader } from "three/examples/jsm/Addons.js";
+import { OrbitControls, GLTFLoader } from "three/examples/jsm/Addons.js";
 
 //get html elements
 const play_button = document.querySelector("#play");
@@ -37,25 +36,51 @@ function onTimerReady(t)
 //three.js event loop function (instead of onTimerUpdate method)
 function renderLoop()
 {
-  const delta = clock.getDelta();
+  //const delta = clock.getDelta();
   //const elapsedTime = clock.getElapsed();
 
   //Textalive
   if(player.isPlaying)
   {
-      const position = player.timer.position - 100;
+      const position = player.timer.position - 500;
 
-      //const current_word = player.video.findWord(position);
+      const current_chorus = player.findChorus(position);
+      const current_word = player.video.findWord(position);
       const current_phrase = player.video.findPhrase(position);
 
-      if(current_phrase)
+      if(current_phrase && current_phrase.text)
         {
-          current_phrase.text!=saved_phrase&&(() => {
+          //whenever there is a new phrase
+          if(current_phrase.text != saved_phrase)
+          {
             prev_phrase = saved_phrase;
             saved_phrase = current_phrase.text;
-          });
+            //console.log("new phrase");
+
+            //update plane position
+            x_pos = Math.floor(Math.random()*50)-20;
+            z_pos = Math.floor(Math.random()*20)-10;
+            plane.position.set(x_pos,y_pos,z_pos);
+
+            //update plane material
+            texture_index = Math.floor(Math.random()*3);
+            plane.material.map = textures[texture_index]
+            plane.material.map.needsUpdate = true;
+          }
+                      //detect chorus
+          if(current_chorus)
+          {
+            //console.log("chorus detected");
+            light.intensity = 500 * (Ease.cubicOut(current_word?.progress(position)));
+          }
+          else
+          {
+            light.intensity = 60;
+          }
+          
           current_phrase_el.textContent = current_phrase.text;
           //console.log(saved_phrase)
+
         }
   }
 
@@ -64,7 +89,7 @@ function renderLoop()
   requestAnimationFrame(renderLoop);
 }
 
-//initialise player object
+//initialise textalive player
 const player = new Player({
   app:{token:"PCvWkkGtKy2DsX9b"},
   mediaElement:document.querySelector("#media")
@@ -87,7 +112,7 @@ renderer3d.setAnimationLoop(renderLoop);
 
 //three.js camera config
 const camera = new THREE.PerspectiveCamera(50, window.innerWidth/window.innerHeight, 1, 500);
-camera.position.set(0.0,20.0,75.0);
+camera.position.set(0.0,35.0,75.0);
 
 // three.js orbit controls
 const controls = new OrbitControls(camera, renderer3d.domElement);
@@ -118,7 +143,7 @@ const rinlen_texture = texture_loader.load("src/assets/rinlen.png");
 
 const textures = [miku_texture, kaito_texture, rinlen_texture];
 let texture_index = Math.floor(Math.random()*3);
-console.log(texture_index);
+//console.log(texture_index);
 
 const plane_geometry = new THREE.PlaneGeometry(15,24);
 const plane_material = new THREE.MeshBasicMaterial({
