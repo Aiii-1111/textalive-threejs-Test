@@ -10,6 +10,7 @@ Resources:
     - https://misora.main.jp/blog/archives/1299#toc11
     - https://fonts.google.com/specimen/Kaisei+HarunoUmi?script=Jpan&preview.script=Jpan
     - https://www.cgtrader.com/items/6484540/download-page
+    - https://protectwise.github.io/troika/troika-three-text/
 
 Colours:
     - #F8FFE5
